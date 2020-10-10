@@ -23,18 +23,20 @@ class StandardDeck
 public:
 	
 	// Initialization:
-	// 
+
 	//Default
 	StandardDeck(); //supposed to equal 0
 
-	//Parameterized 
-	                             
+	// //Parameterized
+	// StandardDeck(int myRankIndex, int mySuitIndex, int myValue, PlayingCard myStandardCardPtr);
+
 	// Rule of three:
 	~StandardDeck();
 	StandardDeck(const StandardDeck& other_deck);
 	StandardDeck& operator=(const StandardDeck& other_deck);
 
 	// Accessors:
+	
 
 	// Mutators:
 
@@ -51,15 +53,21 @@ private:
 	int GetDefaultValue() const; // gets the default value for the rank
 
 	//Sets or re-set the deck to 52 standard playing cards
-	int Initialize()
+	virtual StandardDeck Initialize()
 	{
 		//check if private member pointer is not equal to 0
 		if(myStandardCardPtr != 0)
 		{
 			//Delete memory
+			delete myStandardCardPtr;
 		}
 
-		StandardDeck vector = StandardDeck();
+		myStandardCardPtr = static_cast<PlayingCard*>(malloc(sizeof(PlayingCard)* 52));
+
+		//Loop to set each of the cards in the deck in a sensible order
+		
+		
+		
 		
 	}
 };

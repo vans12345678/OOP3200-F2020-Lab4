@@ -5,6 +5,7 @@
 StandardDeck::StandardDeck() : myRankIndex(1), mySuitIndex(1), myValue(1), myStandardCardPtr(0)
 {
 	//Initialize
+	StandardDeck::Initialize();
 	
 }
 

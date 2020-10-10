@@ -1,6 +1,7 @@
 #include <ctime>
 #include <iostream>
 #include "StandardDeck.h"
+#include "PlayingCard.h"
 
 void Pause() {
 	std::cout << "\nPress \'ENTER\' to continue..." << std::endl;
@@ -13,6 +14,7 @@ int main()
 	srand(time(nullptr)); // seed the random number generator
 
 	// create a deck
+	StandardDeck deck = StandardDeck();	
 	
 	// Show the deck object as initialized
 	Pause();
