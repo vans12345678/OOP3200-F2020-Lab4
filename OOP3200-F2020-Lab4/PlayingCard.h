@@ -17,8 +17,9 @@
 
 #include <string>
 
-class PlayingCard
+ class PlayingCard
 {
+ public:
 	/************************************************************************************
 		 *	Static arrays of strings to represent the ranks and suits
 		 ************************************************************************************/

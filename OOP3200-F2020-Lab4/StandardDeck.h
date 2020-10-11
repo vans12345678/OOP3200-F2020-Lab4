@@ -16,6 +16,8 @@
 #ifndef __STANDARD_DECK__
 #define __STANDARD_DECK__
 
+#include <vector>
+
 #include "PlayingCard.h"
 
 class StandardDeck
@@ -36,40 +38,22 @@ public:
 	StandardDeck& operator=(const StandardDeck& other_deck);
 
 	// Accessors:
-	
-
-	// Mutators:
+	std::vector<PlayingCard> GetDeck() const;
+	PlayingCard DrawNextCard() const;
+	//Mutators
 
 private:
 	
-	int myRankIndex{}; // an int to represent the rank for standard deck {1 - 13}
-	int mySuitIndex{}; // an int to represen
-	int myValue;   // an int to represent the 'value' of the card for standard deck
-	PlayingCard* myStandardCardPtr;
+   
+	PlayingCard myStandardCard;
+	std::vector<PlayingCard> myStandardDeck;
+	int* myStandardPtr;
+	
 
-	static const int DEFAULT_VALU_WANTED = -999;
-
-	// Private Methods - useful internallyt the suit for standard deck (0 - 3}
-	int GetDefaultValue() const; // gets the default value for the rank
+	// Private Methods - useful internally the suit for standard deck (0 - 3}
 
 	//Sets or re-set the deck to 52 standard playing cards
-	virtual StandardDeck Initialize()
-	{
-		//check if private member pointer is not equal to 0
-		if(myStandardCardPtr != 0)
-		{
-			//Delete memory
-			delete myStandardCardPtr;
-		}
-
-		myStandardCardPtr = static_cast<PlayingCard*>(malloc(sizeof(PlayingCard)* 52));
-
-		//Loop to set each of the cards in the deck in a sensible order
-		
-		
-		
-		
-	}
+	virtual void Initialize();
 };
 
 #endif /* defined (__STANDARD_DECK__) */
