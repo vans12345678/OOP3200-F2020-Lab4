@@ -5,10 +5,10 @@
  *	represent a standard deck of 52 cards that might be useful in a card game type
  *	application.  
  *
- *	@author		Thom MacDonald
- *	@author		Tom Tsiliopoulos
+ *	@author		Andre Agrippa
+ *	@author		Najeebulla Husaini
  *	@version	2020.10
- *	@since		Jul 2018
+ *	@since		October 2020
  *	@see		Bronson, G. (2012). A First Book of C++ (4th ed.). Boston, MA: Course Technology.
 */
 
@@ -44,6 +44,7 @@ public:
 	void ResetDeck(StandardDeck& deck);
 	
 	
+	
 
 private:
 	
@@ -57,6 +58,8 @@ private:
 
 	//Sets or re-set the deck to 52 standard playing cards
 	virtual void Initialize();
+	//Displays deck
+	
 };
 
 #endif /* defined (__STANDARD_DECK__) */

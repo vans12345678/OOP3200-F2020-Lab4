@@ -1,3 +1,8 @@
+/*
+ * Filename: StandardDeck.cpp
+ * Name: Andre Agrippa, Najeebulla Hussaini
+ * Date: 10/09/2020
+ */
 #include "StandardDeck.h"
 
 // Default Constructor
@@ -81,4 +86,5 @@ void StandardDeck::Initialize()
 	}
 
 }
+
 

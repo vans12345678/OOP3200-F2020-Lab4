@@ -13,7 +13,7 @@ int main()
 {
 	/*	Your main() function should demonstrate each of the features of the StandardDeck class*/
 	srand(time(nullptr)); // seed the random number generator
-	// 
+
 	// create a deck
 	StandardDeck deck = StandardDeck();
 	
@@ -24,7 +24,7 @@ int main()
 	// Draw the next card and show it
 	deck.DrawNextCard();
 	OutputDeck(deck);
-	// Draw a random card and show it
+	// Draw a random card and show it    
 	
 	// Show the deck with the remaining cards
 
