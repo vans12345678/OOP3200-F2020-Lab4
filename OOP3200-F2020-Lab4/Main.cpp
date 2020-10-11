@@ -7,25 +7,23 @@ void Pause() {
 	std::cout << "\nPress \'ENTER\' to continue..." << std::endl;
 	std::cin.ignore();	fflush(stdin);
 }
+void OutputDeck(StandardDeck& deck);
 
 int main()
 {
 	/*	Your main() function should demonstrate each of the features of the StandardDeck class*/
 	srand(time(nullptr)); // seed the random number generator
-	const int totalCards = 52;
+	// 
 	// create a deck
 	StandardDeck deck = StandardDeck();
-
-	for(int i = 0; i < totalCards; i++)
-	{
-		std::cout << std::string(deck.GetDeck()[i]) << std:: endl;
-	}
 	
 	// Show the deck object as initialized
+	OutputDeck(deck);
 	Pause();
 	
 	// Draw the next card and show it
-
+	deck.DrawNextCard();
+	OutputDeck(deck);
 	// Draw a random card and show it
 	
 	// Show the deck with the remaining cards
@@ -36,3 +34,10 @@ int main()
 }
 
 
+void OutputDeck(StandardDeck& deck)
+{
+	for (int i = 0; i < deck.GetDeck().size(); i++)
+	{
+		std::cout << std::string(deck.GetDeck()[i]) << std::endl;
+	}
+}

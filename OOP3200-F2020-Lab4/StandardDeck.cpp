@@ -7,13 +7,53 @@ StandardDeck::StandardDeck() :myStandardCard(PlayingCard())
 	StandardDeck::Initialize();
 }
 
-//Deconstructor
+//Destructor
 StandardDeck::~StandardDeck() = default;
 
-//Returns 
+//Copy constructor
+StandardDeck::StandardDeck(const StandardDeck& other_deck)
+{
+	SetCard(other_deck.myStandardCard);
+}
+
+//Overload assignment operator
+StandardDeck& StandardDeck::operator=(const StandardDeck & other_deck)
+{
+	SetCard(other_deck.myStandardCard);
+	return (*this);	
+}
+
+//Returns the standard deck of cards
 std::vector<PlayingCard> StandardDeck::GetDeck() const
 {
 	return myStandardDeck;
+}
+//Returns PlayingCard object at [0], decreases total cards by 1 after called
+PlayingCard StandardDeck::DrawNextCard()
+{
+	PlayingCard card = myStandardDeck[0];
+	
+	//For each playing card in deck
+	for (int i = 0; i < myStandardDeck.size() -1; i++)
+	{
+		myStandardDeck[i]=myStandardDeck[i+1];
+	}
+	//Reduces vector size by 1
+	myStandardDeck.pop_back();
+	
+	return card;
+}
+
+//Sets a card in the standard deck
+void StandardDeck::SetCard(PlayingCard other_card)
+{
+	myStandardCard = other_card;
+}
+
+//Resets the deck to default
+void StandardDeck::ResetDeck(StandardDeck& deck)
+{
+	Initialize();
 }
 
 void StandardDeck::Initialize()
@@ -35,7 +75,7 @@ void StandardDeck::Initialize()
 		for(int i = 0; i < PlayingCard::SUITS; i ++)
 		{
 			PlayingCard card = PlayingCard(j, i, -999, true);
-			myStandardDeck.push_back(card);		
+			myStandardDeck.push_back(card);
 		}
 		
 	}

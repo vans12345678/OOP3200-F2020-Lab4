@@ -36,11 +36,14 @@ public:
 	~StandardDeck();
 	StandardDeck(const StandardDeck& other_deck);
 	StandardDeck& operator=(const StandardDeck& other_deck);
-
 	// Accessors:
 	std::vector<PlayingCard> GetDeck() const;
-	PlayingCard DrawNextCard() const;
+	PlayingCard DrawNextCard();
 	//Mutators
+	void SetCard(PlayingCard other_card);
+	void ResetDeck(StandardDeck& deck);
+	
+	
 
 private:
 	
