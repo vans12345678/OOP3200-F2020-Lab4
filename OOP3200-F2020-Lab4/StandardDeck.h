@@ -36,14 +36,20 @@ public:
 	~StandardDeck();
 	StandardDeck(const StandardDeck& other_deck);
 	StandardDeck& operator=(const StandardDeck& other_deck);
+	
 	// Accessors:
 	std::vector<PlayingCard> GetDeck() const;
+	PlayingCard GetCard() const;
+	PlayingCard* GetPtr() const;
 	PlayingCard DrawNextCard();
+	PlayingCard DrawRandomCard();
+	int CardsRemaining() const;
+	
 	//Mutators
 	void SetCard(PlayingCard other_card);
-	void ResetDeck(StandardDeck& deck);
-	
-	
+	void SetDeck(std::vector<PlayingCard> myStandardDeck);
+	void SetPointer(PlayingCard* standardPtr);
+	void Shuffle();
 	
 
 private:
@@ -51,14 +57,12 @@ private:
    
 	PlayingCard myStandardCard;
 	std::vector<PlayingCard> myStandardDeck;
-	int* myStandardPtr;
+	PlayingCard* myStandardPtr;
 	
-
 	// Private Methods - useful internally the suit for standard deck (0 - 3}
 
 	//Sets or re-set the deck to 52 standard playing cards
 	virtual void Initialize();
-	//Displays deck
 	
 };
 
